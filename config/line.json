@@ -1,0 +1,69 @@
+{
+  "plant_tag": "BW-LINE-1",
+  "store": {
+    "root": "var/state",
+    "journal_name": "records.jsonl",
+    "watermark_name": "watermark.json",
+    "snapshot_name": "projection.json"
+  },
+  "tanks": [
+    {"tag": "TB-01", "capacity_m3": 420.0, "inlet_valve": "V-TB01-IN"},
+    {"tag": "TB-02", "capacity_m3": 360.0, "inlet_valve": "V-TB02-IN"},
+    {"tag": "TB-03", "capacity_m3": 300.0, "inlet_valve": "V-TB03-IN"}
+  ],
+  "pump": {
+    "tag": "BP-01",
+    "rated_flow_m3_per_tick": 60.0,
+    "settle_ticks": 2,
+    "reverse_settle_ticks": 3,
+    "outlet_valve": "V-BP01-OUT"
+  },
+  "dose": {
+    "tag": "DU-01",
+    "target_ppm": 6.5,
+    "max_ppm": 12.0,
+    "min_flow_m3_per_tick": 20.0,
+    "verify_ticks": 2,
+    "inlet_valve": "V-DU01-IN"
+  },
+  "treat": {
+    "tag": "TU-01",
+    "uv_min_intensity": 55.0,
+    "uv_window_ticks": 4,
+    "uv_clear_ticks": 3,
+    "neutralizer_ppm": 3.0,
+    "neutralizer_hold_ticks": 2,
+    "bypass_settle_ticks": 1,
+    "inlet_valve": "V-TU01-IN",
+    "sample_valve": "V-TU01-SMP"
+  },
+  "level": {
+    "tag": "LG-01",
+    "gain_m3_per_unit": 4.2,
+    "offset_limit_m3": 12.0,
+    "calibration_max_age_ticks": 240,
+    "sensor_tag": "LT-01"
+  },
+  "sensor": {
+    "tag": "AN-01",
+    "flush_ticks": 2,
+    "dwell_ticks": 1,
+    "turbidity_limit_ntu": 8.0,
+    "organism_limit_per_m3": 10.0,
+    "batch_prefix": "BATCH"
+  },
+  "compliance": {
+    "permit_valid_ticks": 6,
+    "discharge_window_ticks": 8,
+    "max_open_windows": 2
+  },
+  "quota": {
+    "max_records_per_epoch": 400,
+    "warn_ratio": 0.85
+  },
+  "console": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "page_size": 40
+  }
+}

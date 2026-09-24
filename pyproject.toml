@@ -1,0 +1,28 @@
+[project]
+name = "bwms"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools]
+packages = [
+    "bwms",
+    "bwms.ns",
+    "bwms.store",
+    "bwms.audit",
+    "bwms.seq",
+    "bwms.tank",
+    "bwms.pump",
+    "bwms.dose",
+    "bwms.treat",
+    "bwms.level",
+    "bwms.sensor",
+    "bwms.compliance",
+    "bwms.quota",
+    "bwms.console",
+]
